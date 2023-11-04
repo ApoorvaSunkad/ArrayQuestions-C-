@@ -135,3 +135,5 @@ int main(){
 
     cout << minSum << endl;
 }
+//Video link helpful for this question:
+//https://www.youtube.com/live/h8qGzFRTCZY?si=GS72WyKxUkJTfTVL
