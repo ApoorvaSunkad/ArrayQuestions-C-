@@ -27,6 +27,9 @@ vector<int> sortByIncreasingFrequency(vector<int>& arr) {
             mpp[arr[i]]++;
         }
         
+        //This is using lambda function which is then passed to the sort function
+        //Learn more about this is GFG article.
+        
         auto comparator = [&](int a, int b) {
            if (mpp[a] == mpp[b]) {
                return a > b;  
