@@ -74,5 +74,5 @@ int maxProductDifference(vector<int>& nums) {
             }
         }
         
-        return biggest * secondBiggest - smallest * secondSmallest;
+        return (biggest * secondBiggest - smallest * secondSmallest;)
 }
