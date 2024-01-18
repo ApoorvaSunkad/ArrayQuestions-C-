@@ -40,6 +40,44 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 */
 
+//Brute force approach:
+//My solution
+//T.C = O(N)
+//S.C = O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int removeDuplicates(vector<int>& nums) {
+           int n = nums.size();
+    
+     if (n <= 1) {
+        return n; // No need to remove duplicates if there are 0 or 1 elements.
+     }
+    
+     //int k = 1; Initialize a pointer to track the unique elements.
+
+     vector<int> v;
+        
+        v.push_back(nums[0]);
+        
+        for(int i = 1; i<n; i++){
+            if(nums[i]!=nums[i-1]){
+                v.push_back(nums[i]);
+            }
+        }
+        
+        for(int i = 0; i<v.size(); i++){
+            nums[i] = v[i];
+        }
+        
+        return v.size();
+}
+
+//Optimised solution: In place
+//T.C = O(N)
+//S.C = O(1)
+
 #include<bits/stdc++.h>
 using namespace std;
 
