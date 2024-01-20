@@ -40,3 +40,26 @@ Expected Auxilliary Space: O(n)
 #include<bits/stdc++.h>
 using namespace std;
 
+//T.C = O(N)
+//S.C = O(N)
+
+int firstRepeated(int arr[], int n) {
+        
+        unordered_map<int,int> mp;
+        
+        for(int i = 0; i<n; i++){
+            mp[arr[i]]++;
+        }
+        
+        for(int i = 0; i<n; i++){
+            int key = arr[i];
+            
+            auto it = mp.find(key);
+            
+            if(it->second > 1){
+                return i+1;
+            }
+        }
+        
+        return -1;
+    }
