@@ -20,10 +20,10 @@ Output: [4,9,9,49,121]
 #include<bits/stdc++.h>
 using namespace std;
 
-//T.C = O(N)
+//T.C = O(nlogN)
 //S.C = O(1)
 
-
+//Brute force
 vector<int> sortedSquares(vector<int>& nums) {
         int n = nums.size();
         
@@ -33,4 +33,33 @@ vector<int> sortedSquares(vector<int>& nums) {
         }
         sort(nums.begin(), nums.end());
         return nums;
-    }
+}
+
+
+//Two pointer approach
+//T.C = O(N)
+//S.C = O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+vector<int> sortedSquares(vector<int>& nums) {
+        int n = nums.size();
+        
+        vector<int> v(n);
+
+        int i = 0, j = n-1;
+
+        for(int k = n-1; k>=0; k--){
+            if(abs(nums[i])>abs(nums[j])){
+                v[k] = nums[i]*nums[i];
+                i++;
+            }
+            else{
+                v[k] = nums[j]*nums[j];
+                j--;
+            }
+        }
+        return v;
+}
