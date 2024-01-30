@@ -50,16 +50,17 @@ bool containsNearbyDuplicate(vector<int>& nums, int k) {
 //T.C = O(N)
 //S.C = O(N)
 
+
 bool containsNearbyDuplicate(vector<int>& nums, int k) {
-         unordered_map<int, int> m;
-        for(int i = 0; i < nums.size(); i++){
-            if(m.find(nums[i]) != m.end() && abs(m[nums[i]]-i) <= k){
-                return true;
-            }
-            //if I have not seen this number before, insert the number with its position in the map
-            // and if the number is already present in the map, then update the position of that
-            // number.
-            m[nums[i]] = i;
-        }
-        return false;
+    unordered_map<int, int> m;
+    for(int i = 0; i < nums.size(); i++){
+            int val = nums[i];
+                if(m.find(val) != m.end()){
+                    if (i - m[val] <= k) {
+                        return true; // Found a pair with difference <= k
+                    }
+                }
+            m[val] = i;
+    }
+    return false;
 }
