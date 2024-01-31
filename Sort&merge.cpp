@@ -1,3 +1,29 @@
+/*
+Merge sort uses the concept of Divide and conquer where we divide the unsorted array
+into 2 equal halves. We divide until it is impossible to divide the array further 
+and then we merge the sorted arrays into one array.
+
+Also this algorithm uses "Recursion" the divide the array
+
+The time complexity to divide the array is O(LogN) because we divide the array
+every time into 2 halves.
+and to merge we traverse the array which takes O(N) where N is the number of elements 
+in the array.
+
+so the Total Time complexity boils down to O(n*logn)
+and the space complexity is O(N) because we are taking an auxillary array
+to add elements of merged array
+
+T.C = O(NLOGN)
+S.C = O(N)
+
+This algorithm is better than the insertion, bubble, selection sort algorithms.
+because of the Time complexity.
+
+*/
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
